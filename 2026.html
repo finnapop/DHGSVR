@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>チェン | New Year 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #12131a;
+      --night: #1b1e29;
+      --paper: #f6f1e8;
+      --mist: #efe7da;
+      --accent: #f36b4f;
+      --accent-2: #1aa2a8;
+      --accent-3: #f6c14f;
+      --white: #ffffff;
+      --shadow: 0 20px 45px rgba(16, 20, 32, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at 15% 20%, rgba(243, 107, 79, 0.18), transparent 50%),
+        radial-gradient(circle at 85% 0%, rgba(26, 162, 168, 0.22), transparent 45%),
+        linear-gradient(160deg, #fff7e7 0%, #f4ede0 55%, #f0e5d7 100%);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(246, 241, 232, 0.9);
+      border-bottom: 1px solid rgba(18, 19, 26, 0.1);
+    }
+
+    .nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav__brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 700;
+    }
+
+    .nav__brand img {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.95rem;
+      color: rgba(18, 19, 26, 0.7);
+    }
+
+    .nav__links a:hover {
+      color: var(--accent-2);
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.8rem 1.5rem 4rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero__text h1 {
+      font-family: "Kaisei Opti", serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      margin: 0 0 0.9rem;
+      line-height: 1.2;
+    }
+
+    .hero__text h1 span {
+      color: var(--accent-2);
+    }
+
+    .hero__text p {
+      margin: 0 0 1.6rem;
+      color: rgba(18, 19, 26, 0.7);
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(18, 19, 26, 0.1);
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero__card {
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 24px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18, 19, 26, 0.08);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hero__card h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: rgba(18, 19, 26, 0.7);
+    }
+
+    .hero__card ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    section h2 {
+      font-family: "Kaisei Opti", serif;
+      font-size: 1.7rem;
+      margin: 2.8rem 0 0.8rem;
+    }
+
+    .muted {
+      color: rgba(18, 19, 26, 0.65);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 1.3rem;
+      border: 1px solid rgba(18, 19, 26, 0.08);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .card small {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(18, 19, 26, 0.55);
+    }
+
+    .cta {
+      margin-top: 2.5rem;
+      padding: 2rem;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(26, 162, 168, 0.12), rgba(243, 107, 79, 0.14));
+      border: 1px solid rgba(18, 19, 26, 0.08);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid rgba(18, 19, 26, 0.1);
+      background: var(--white);
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, rgba(243, 107, 79, 0.95), rgba(246, 193, 79, 0.95));
+      color: var(--white);
+      border: none;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(16, 20, 32, 0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: rgba(18, 19, 26, 0.6);
+      border-top: 1px solid rgba(18, 19, 26, 0.08);
+      background: rgba(246, 241, 232, 0.9);
+    }
+
+    @media (max-width: 720px) {
+      .nav__links {
+        display: none;
+      }
+
+      .button-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="nav__brand">
+        <img src="avatar.png" alt="チェンのアバター">
+        <div>
+          <div style="font-size: 0.95rem;">チェン</div>
+          <div style="font-size: 0.8rem; color: rgba(18, 19, 26, 0.6);">New Year 2026</div>
+        </div>
+      </div>
+      <div class="nav__links" aria-label="ページ内リンク">
+        <a href="#concept">Concept</a>
+        <a href="#greeting">Card</a>
+        <a href="#plan">Plan</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="concept">
+      <div class="hero__text">
+        <div class="hero__badge">new year 2026</div>
+        <h1>新しい年を、<span>学びと物語</span>で迎える。</h1>
+        <p>メインポートフォリオの下層ページとして、年賀状と作品紹介をミックスした小さな特設ページを準備中です。2026 年のテーマは「ことばが未来をつくる」。学びの体験が、誰かの一歩になる年に。</p>
+        <div class="button-row">
+          <a class="button primary" href="index.html">ポートフォリオへ戻る</a>
+          <a class="button" href="#greeting">年賀カードを見る</a>
+        </div>
+      </div>
+      <div class="hero__card">
+        <h2>準備中の要素</h2>
+        <ul>
+          <li>年賀状のキービジュアルと短いメッセージ</li>
+          <li>2026年の学習プロジェクト予告</li>
+          <li>応援メッセージを書き込めるミニコーナー</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="greeting">
+      <h2>年賀カードのコンセプト</h2>
+      <p class="muted">ことばの力でつながる未来を描き、暖色のグラデーションであたたかさと希望を表現します。</p>
+      <div class="grid">
+        <article class="card">
+          <small>Visual</small>
+          <h3>やわらかな光と紙の質感</h3>
+          <p>紙の上に光が差し込むようなグラデーションで、学びが積み重なる時間を可視化。</p>
+        </article>
+        <article class="card">
+          <small>Message</small>
+          <h3>多言語で「はじまり」を届ける</h3>
+          <p>日本語・中国語・英語の短い挨拶を並べて、国境を越える学びを表現。</p>
+        </article>
+        <article class="card">
+          <small>Interaction</small>
+          <h3>クリックで願いが増える演出</h3>
+          <p>カードに触れるたび、学びのキーワードが増えていく小さなアニメーション案。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="plan">
+      <h2>2026 プランニング</h2>
+      <p class="muted">下層ページなので軽量に。公開前の更新手順もここに記録します。</p>
+      <div class="grid">
+        <article class="card">
+          <small>12月上旬</small>
+          <h3>キービジュアル制作</h3>
+          <p>写真・グラデーション・タイポの組み合わせで年賀状を試作。</p>
+        </article>
+        <article class="card">
+          <small>12月中旬</small>
+          <h3>年賀メッセージの精査</h3>
+          <p>学びをテーマにした短い挨拶文を3言語で仕上げる。</p>
+        </article>
+        <article class="card">
+          <small>12月下旬</small>
+          <h3>公開とSNS共有</h3>
+          <p>ポートフォリオからリンクし、SNS用の画像も用意。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="cta">
+        <h2>年始のコラボやご挨拶はこちらから</h2>
+        <p class="muted">年明けの企画相談や教材づくり、コラボ配信のご相談も歓迎しています。</p>
+        <div class="button-row">
+          <a class="button primary" href="mailto:hello@example.com">メールで相談する</a>
+          <a class="button" href="index.html">メインポートフォリオへ戻る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 チェン — New Year Portfolio
+  </footer>
+</body>
+</html>
