@@ -1,136 +1,391 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CHEN｜個人作品集</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHEN | ポートフォリオ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --accent: #6366f1;
+      --bg: #0b1221;
+      --surface: rgba(255, 255, 255, 0.04);
+      --card: rgba(255, 255, 255, 0.06);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #7c3aed;
+      --accent-2: #06b6d4;
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.18), transparent 30%),
+        radial-gradient(circle at 80% 10%, rgba(6, 182, 212, 0.15), transparent 25%),
+        radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.12), transparent 25%),
+        var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     header {
-      padding: 4rem 1.5rem;
-      max-width: 900px;
-      margin: auto;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(11, 18, 33, 0.95) 0%, rgba(11, 18, 33, 0.7) 100%);
+      border-bottom: 1px solid var(--border);
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav__brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .nav__brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: var(--shadow);
+      object-fit: cover;
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav__links a:hover {
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      align-items: center;
+      padding: 4rem 0 2rem;
+    }
+
+    .hero__text h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin: 0 0 0.75rem;
+    }
+
+    .hero__text h1 span {
+      color: var(--accent);
+    }
+
+    .hero__text p {
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .hero__cta {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.85rem 1.2rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: linear-gradient(120deg, rgba(124, 58, 237, 0.16), rgba(6, 182, 212, 0.16));
+      color: #fff;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .button.secondary {
+      background: var(--surface);
+      color: var(--muted);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .hero__card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hero__stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.9rem 1rem;
+      border-radius: 12px;
+    }
+
+    .stat strong {
+      font-size: 1.3rem;
+      display: block;
     }
 
     h2 {
-      margin-top: 3rem;
-      font-size: 1.8rem;
+      margin: 2.5rem 0 0.5rem;
+      font-size: 1.6rem;
+      letter-spacing: 0.01em;
     }
 
-    p {
+    .muted {
       color: var(--muted);
-      max-width: 600px;
+      margin: 0 0 1rem;
     }
 
-    section {
-      padding: 2rem 1.5rem;
-      max-width: 900px;
-      margin: auto;
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1rem;
     }
 
-    .skills span {
-      display: inline-block;
-      background: #eef2ff;
-      color: var(--accent);
-      padding: 0.4rem 0.7rem;
-      margin: 0.3rem;
+    .chip {
+      padding: 0.55rem 0.85rem;
       border-radius: 999px;
-      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      color: #fff;
+      font-size: 0.95rem;
     }
 
-    .projects {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.2rem;
+      margin-top: 1.2rem;
     }
 
     .card {
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 1.2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 0.5rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .card small {
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .timeline {
+      border-left: 1px solid var(--border);
+      margin-top: 1.2rem;
+      padding-left: 1.2rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline__item {
+      position: relative;
+      padding-left: 0.6rem;
+    }
+
+    .timeline__item::before {
+      content: '';
+      position: absolute;
+      left: -1.6rem;
+      top: 0.25rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.25);
     }
 
     footer {
       text-align: center;
-      padding: 3rem 1rem;
-      font-size: 0.9rem;
       color: var(--muted);
+      padding: 3rem 1rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 720px) {
+      .nav__links {
+        display: none;
+      }
+
+      .hero {
+        padding: 3rem 0 1rem;
+      }
     }
   </style>
 </head>
-
 <body>
+  <header>
+    <nav class="nav">
+      <div class="nav__brand">
+        <img src="avatar.png" alt="CHENのアバター">
+        <div>CHEN｜クリエイティブ言語エデュケーター</div>
+      </div>
+      <div class="nav__links" aria-label="ページ内リンク">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-<header>
-  <h1>CHEN</h1>
-  <p>語言教師 / 互動媒體創作者<br>
-     專注於語言教育 × Web × AI × 創意教學</p>
-</header>
+  <main class="container">
+    <section class="hero" id="about">
+      <div class="hero__text">
+        <h1>ことばとテクノロジーで学びをつくる <span>CHEN</span></h1>
+        <p>日本語・中国語・英語の学習者に向けて、Web と AI を組み合わせたインタラクティブな学習体験をデザインしています。教育現場で培ったコミュニケーション力と、クリエイティブな発想で「続けられる学び」を形にします。</p>
+        <div class="hero__cta">
+          <a class="button" href="mailto:hello@example.com">📧 仕事の依頼をする</a>
+          <a class="button secondary" href="#projects">最近の制作を見る</a>
+        </div>
+      </div>
+      <div class="hero__card" aria-label="プロフィール概要">
+        <div class="hero__stats">
+          <div class="stat">
+            <strong>8+年</strong>
+            <span>語学教育の経験</span>
+          </div>
+          <div class="stat">
+            <strong>50本</strong>
+            <span>学習コンテンツ制作</span>
+          </div>
+          <div class="stat">
+            <strong>3言語</strong>
+            <span>日・中・英で対応</span>
+          </div>
+        </div>
+        <p class="muted">対面授業からオンライン講座、VTuber を活用した配信型レッスンまで幅広く企画・運営。学習者のモチベーションを上げる UI / UX とストーリーづくりが得意です。</p>
+      </div>
+    </section>
 
-<section>
-  <h2>技能 Skills</h2>
-  <div class="skills">
-    <span>中文教學</span>
-    <span>日語</span>
-    <span>英語</span>
-    <span>Web 製作</span>
-    <span>VTuber</span>
-    <span>生成式 AI</span>
-  </div>
-</section>
+    <section id="skills">
+      <h2>得意分野</h2>
+      <p class="muted">教育デザイン、Web 制作、生成 AI 活用を中心に、学びを加速させる仕組みを作ります。</p>
+      <div class="chips">
+        <span class="chip">カリキュラム設計</span>
+        <span class="chip">バイリンガル指導（中・日・英）</span>
+        <span class="chip">Webフロントエンド (HTML/CSS/JS)</span>
+        <span class="chip">生成AIプロンプト設計</span>
+        <span class="chip">動画・配信運営 (VTuber)</span>
+        <span class="chip">インタラクティブ教材</span>
+      </div>
+    </section>
 
-<section>
-  <h2>作品 Projects</h2>
-  <div class="projects">
-    <div class="card">
-      <h3>VTuber 中文教學企劃</h3>
-      <p>結合虛擬角色與語言學習的互動課程設計。</p>
-    </div>
-    <div class="card">
-      <h3>互動語言小遊戲</h3>
-      <p>使用 HTML / JS 製作的昭和風學習遊戲。</p>
-    </div>
-    <div class="card">
-      <h3>語言 × 工作坊</h3>
-      <p>以 Pattern Language 為核心的教學實驗。</p>
-    </div>
-  </div>
-</section>
+    <section id="projects">
+      <h2>最近のプロジェクト</h2>
+      <p class="muted">学習者が「続けたくなる」仕組みを意識したプロトタイプの一部を紹介します。</p>
+      <div class="grid">
+        <article class="card">
+          <small>VTuber × 中国語</small>
+          <h3>バーチャル教室でのリアルタイム授業</h3>
+          <p>VTuber キャラクターを使い、チャットボットと連動した会話練習セッションを設計。配信とワークシートを組み合わせ、アウトプット量を 30% 向上。</p>
+        </article>
+        <article class="card">
+          <small>Web ゲーム</small>
+          <h3>昭和レトロな語彙クエスト</h3>
+          <p>HTML / CSS / JS で制作したブラウザゲーム。スコアリングと週次チャレンジで学習の定着率アップを狙い、累計 3,000 回プレイを達成。</p>
+        </article>
+        <article class="card">
+          <small>AI チューター</small>
+          <h3>パターン・ランゲージ学習支援</h3>
+          <p>生成 AI を活用し、学習者の回答に合わせて例文やフィードバックを即時生成。難易度調整ロジックで継続率を改善。</p>
+        </article>
+      </div>
+    </section>
 
-<section>
-  <h2>聯絡 Contact</h2>
-  <p>
-    📧 <a href="mailto:hello@example.com">hello@example.com</a><br>
-    🌐 GitHub / SNS 可再補
-  </p>
-</section>
+    <section id="timeline">
+      <h2>これまでの歩み</h2>
+      <div class="timeline">
+        <div class="timeline__item">
+          <small>2023 - 現在</small>
+          <h3>フリーランス言語クリエイター</h3>
+          <p class="muted">オンライン講座の制作・運営、企業研修コンテンツの受託開発、VTuber 配信企画などを担当。</p>
+        </div>
+        <div class="timeline__item">
+          <small>2020 - 2023</small>
+          <h3>語学スクール 講師 / デジタル教材開発</h3>
+          <p class="muted">ハイブリッド授業の導入と LMS 改善をリード。学習者満足度アンケートで 4.7/5 を達成。</p>
+        </div>
+        <div class="timeline__item">
+          <small>2016 - 2020</small>
+          <h3>大学・語学センター</h3>
+          <p class="muted">初級〜上級クラスでの授業設計、留学生向けのワークショップ運営、発表会イベントの企画。</p>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  © 2025 CHEN
-</footer>
+    <section id="contact">
+      <h2>一緒に作りませんか？</h2>
+      <p class="muted">教育・Web・AI を掛け合わせたプロジェクトや、言語学習コンテンツの共同制作を歓迎しています。お気軽にご連絡ください。</p>
+      <div class="hero__cta" style="margin-top: 1rem;">
+        <a class="button" href="mailto:hello@example.com">メールで相談する</a>
+        <a class="button secondary" href="https://github.com/" target="_blank" rel="noreferrer">GitHub を見る</a>
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    © 2025 CHEN — Learning, Creativity & Community
+  </footer>
 </body>
 </html>
