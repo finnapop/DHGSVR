@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>星澄澪 | VTUBER 作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0d1117;
+      --night: #0b1110;
+      --deep: #071a1a;
+      --mint: #1fe5c8;
+      --aqua: #4dd7ff;
+      --coral: #ff8a5c;
+      --gold: #ffd166;
+      --glass: rgba(255, 255, 255, 0.08);
+      --stroke: rgba(255, 255, 255, 0.16);
+      --shadow: 0 24px 60px rgba(3, 20, 23, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", sans-serif;
+      color: #eef6f7;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(31, 229, 200, 0.2), transparent 40%),
+        radial-gradient(circle at 88% 12%, rgba(255, 138, 92, 0.2), transparent 35%),
+        radial-gradient(circle at 70% 80%, rgba(77, 215, 255, 0.18), transparent 38%),
+        linear-gradient(140deg, #071a1a 0%, #061018 45%, #0c0f1e 100%);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      opacity: 0.35;
+      z-index: -1;
+      filter: blur(2px);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    body::before {
+      background: radial-gradient(circle, rgba(31, 229, 200, 0.7), transparent 70%);
+      top: -120px;
+      right: -90px;
+    }
+
+    body::after {
+      background: radial-gradient(circle, rgba(255, 209, 102, 0.65), transparent 70%);
+      bottom: -150px;
+      left: -120px;
+      animation-delay: 2s;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(6, 16, 24, 0.75);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav__brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav__brand span {
+      font-family: "ZCOOL KuaiLe", sans-serif;
+      font-size: 1.15rem;
+    }
+
+    .nav__badge {
+      font-size: 0.72rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(31, 229, 200, 0.4);
+      color: var(--mint);
+      background: rgba(31, 229, 200, 0.12);
+      letter-spacing: 0.2em;
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+
+    .nav__links a:hover {
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      align-items: center;
+      padding: 3rem 0 2rem;
+    }
+
+    .hero__title {
+      font-family: "ZCOOL KuaiLe", sans-serif;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      margin: 0 0 0.6rem;
+    }
+
+    .hero__title span {
+      color: var(--mint);
+    }
+
+    .hero__subtitle {
+      margin: 0 0 1.5rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 520px;
+    }
+
+    .hero__cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.85rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: linear-gradient(120deg, rgba(31, 229, 200, 0.2), rgba(77, 215, 255, 0.25));
+      color: #fff;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button.secondary {
+      background: var(--glass);
+      border-color: var(--stroke);
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(3, 20, 23, 0.45);
+    }
+
+    .hero__card {
+      background: rgba(8, 20, 26, 0.85);
+      border: 1px solid var(--stroke);
+      border-radius: 24px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .hero__profile {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .hero__profile img {
+      width: 88px;
+      height: 88px;
+      border-radius: 24px;
+      object-fit: cover;
+      border: 2px solid rgba(31, 229, 200, 0.5);
+    }
+
+    .hero__tag {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .stat {
+      padding: 0.85rem 0.9rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.9rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    h2 {
+      font-family: "ZCOOL KuaiLe", sans-serif;
+      font-size: 1.9rem;
+      margin: 2.5rem 0 0.6rem;
+    }
+
+    .section-lead {
+      margin: 0 0 1.5rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 700px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: var(--glass);
+      border: 1px solid var(--stroke);
+      border-radius: 20px;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+      min-height: 160px;
+    }
+
+    .card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.1rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--aqua);
+    }
+
+    .schedule {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    .schedule th,
+    .schedule td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .schedule th {
+      background: rgba(255, 255, 255, 0.08);
+      font-weight: 600;
+    }
+
+    .schedule tr:last-child td {
+      border-bottom: none;
+    }
+
+    .showcase {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .showcase__item {
+      display: grid;
+      grid-template-columns: minmax(120px, 160px) 1fr;
+      gap: 1.2rem;
+      align-items: center;
+      padding: 1.1rem;
+      border-radius: 20px;
+      background: rgba(9, 22, 27, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow);
+    }
+
+    .thumb {
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      background:
+        linear-gradient(140deg, rgba(31, 229, 200, 0.35), rgba(255, 138, 92, 0.35)),
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.2), transparent 65%);
+      display: grid;
+      place-items: center;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    .palette {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.8rem;
+    }
+
+    .swatch {
+      padding: 0.5rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.85rem;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .contact {
+      display: grid;
+      gap: 1rem;
+      background: rgba(8, 22, 26, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      padding: 2rem 1.5rem 3rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.85rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: rise 0.8s ease forwards;
+      animation-delay: var(--delay, 0s);
+    }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(18px);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav__links {
+        flex-wrap: wrap;
+      }
+
+      .showcase__item {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .thumb {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="nav__brand">
+        <span>星澄澪</span>
+        <span class="nav__badge">VTUBER</span>
+      </div>
+      <nav class="nav__links">
+        <a href="#about">關於</a>
+        <a href="#content">內容</a>
+        <a href="#schedule">直播表</a>
+        <a href="#showcase">作品</a>
+        <a href="#contact">聯絡</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="reveal" style="--delay: 0.05s;">
+        <p class="pill">星海旅人 / Live Vocal / 治癒系</p>
+        <h1 class="hero__title">讓每一次開播都像一場<span>微光演唱會</span></h1>
+        <p class="hero__subtitle">
+          以霓光星海為舞台的 VTUBER 作品集。擅長夜間聊天、電玩實況與原創歌曲，
+          擁有溫柔卻俐落的現場節奏與觀眾互動設計。
+        </p>
+        <div class="hero__cta">
+          <a class="button" href="mailto:hello@vtuber.example">合作洽談</a>
+          <a class="button secondary" href="#showcase">觀看作品精選</a>
+        </div>
+      </div>
+
+      <div class="hero__card reveal" style="--delay: 0.18s;">
+        <div class="hero__profile">
+          <img src="avatar.png" alt="星澄澪 VTUBER 形象" />
+          <div>
+            <div class="hero__tag">星澄澪 Hoshizumi Mio</div>
+            <div>夜光導播 / 直播設計師</div>
+          </div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><strong>2023/09</strong>初次亮相</div>
+          <div class="stat"><strong>UTC+8</strong>台灣時間</div>
+          <div class="stat"><strong>中・日・英</strong>多語互動</div>
+          <div class="stat"><strong>4-5 次/週</strong>固定開播</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="reveal" style="--delay: 0.1s;">
+      <h2>角色設定與定位</h2>
+      <p class="section-lead">
+        星澄澪是一位來自夜空劇場的導播，擅長把觀眾帶進「聲音與影像同步」的沉浸式舞台。
+        風格關鍵字：清冷微光、現場節奏、故事性互動。
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>直播氛圍</h3>
+          <p>溫柔節奏 + 高密度互動，適合深夜陪伴、話題聊天與情緒修復型內容。</p>
+        </div>
+        <div class="card">
+          <h3>世界觀核心</h3>
+          <p>「每位觀眾都是星座的一部分。」採用聊天室星座儀式與片尾語音祝福。</p>
+        </div>
+        <div class="card">
+          <h3>合作定位</h3>
+          <p>品牌直播導覽、沉浸式產品體驗、音樂與劇情聯動企劃。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="content" class="reveal" style="--delay: 0.15s;">
+      <h2>內容支柱</h2>
+      <p class="section-lead">以「夜間陪伴 + 節奏感」為核心，打造固定節目與短片系列。</p>
+      <div class="grid">
+        <div class="card">
+          <h3>霓光歌單</h3>
+          <p>原創與翻唱夜曲，特別設計燈光場景與字幕視覺。</p>
+        </div>
+        <div class="card">
+          <h3>星海電玩</h3>
+          <p>偏向敘事型與節奏型遊戲，強調陪玩互動與劇情沉浸。</p>
+        </div>
+        <div class="card">
+          <h3>觀眾儀式</h3>
+          <p>每週一次「星座診療室」直播，用觀眾故事建構短篇。</p>
+        </div>
+        <div class="card">
+          <h3>短片剪輯</h3>
+          <p>30-60 秒精華，主打高情緒節點與高辨識配色。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="reveal" style="--delay: 0.2s;">
+      <h2>直播排程</h2>
+      <p class="section-lead">固定週四直播演唱會，其他時段以互動與遊戲為主。</p>
+      <table class="schedule">
+        <thead>
+          <tr>
+            <th>星期</th>
+            <th>內容</th>
+            <th>時間</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>週一</td>
+            <td>星座診療室 / 深夜聊天</td>
+            <td>21:30</td>
+          </tr>
+          <tr>
+            <td>週三</td>
+            <td>星海電玩 / 敘事型遊戲</td>
+            <td>20:00</td>
+          </tr>
+          <tr>
+            <td>週四</td>
+            <td>霓光歌單 / 現場演唱</td>
+            <td>22:00</td>
+          </tr>
+          <tr>
+            <td>週六</td>
+            <td>觀眾企劃 / 合作企劃</td>
+            <td>19:30</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="showcase" class="reveal" style="--delay: 0.25s;">
+      <h2>作品精選</h2>
+      <p class="section-lead">聚焦合作、企劃與舞台設計，展現直播導播能力。</p>
+      <div class="showcase">
+        <div class="showcase__item">
+          <div class="thumb">MV LIVE</div>
+          <div>
+            <h3>「Neon Lullaby」直播 MV</h3>
+            <p>自製舞台分鏡 + 即時場景切換，10 分鐘內完成 6 段情緒起伏的演出。</p>
+          </div>
+        </div>
+        <div class="showcase__item">
+          <div class="thumb">COLLAB</div>
+          <div>
+            <h3>品牌新品發表會導播</h3>
+            <p>將新品功能融入互動遊戲，觀眾參與率提升至 68%。</p>
+          </div>
+        </div>
+        <div class="showcase__item">
+          <div class="thumb">STORY</div>
+          <div>
+            <h3>「星座診療室」系列</h3>
+            <p>以觀眾留言改編 12 集短篇，建立長期觀眾黏著度。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal" style="--delay: 0.3s;">
+      <h2>品牌視覺與素材</h2>
+      <p class="section-lead">提供合作方快速理解的視覺規範與可用素材。</p>
+      <div class="grid">
+        <div class="card">
+          <h3>配色</h3>
+          <p>主色採霓光薄荷與深夜藍，搭配珊瑚與金色高亮。</p>
+          <div class="palette">
+            <span class="swatch">#1FE5C8</span>
+            <span class="swatch">#4DD7FF</span>
+            <span class="swatch">#FF8A5C</span>
+            <span class="swatch">#FFD166</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>語氣</h3>
+          <p>溫柔中帶節奏感，常用「一起」與「今晚」作為邀請語。</p>
+        </div>
+        <div class="card">
+          <h3>素材清單</h3>
+          <p>標準立繪、表情包、直播待機畫面、片尾語音、動態字幕模板。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal" style="--delay: 0.35s;">
+      <h2>聯絡與合作</h2>
+      <div class="contact">
+        <p>
+          合作類型：品牌直播導覽、音樂活動、IP 聯動、訪談節目。請附上企劃摘要與預計時程。
+        </p>
+        <div class="hero__cta">
+          <a class="button" href="mailto:hello@vtuber.example">寄送合作邀請</a>
+          <a class="button secondary" href="https://example.com" target="_blank" rel="noreferrer">
+            社群主頁
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    星澄澪 VTUBER Portfolio · Designed for immersive live experiences
+  </footer>
+</body>
+</html>
