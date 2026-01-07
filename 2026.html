@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>チェン | 春節中国語教室 2026</title>
-  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <title>2026 | Chen 個人網站</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --red: #d12f2f;
-      --deep-red: #a32121;
-      --gold: #f2c14f;
-      --ink: #221212;
-      --paper: #fff3ea;
-      --mist: #f6e1d6;
+      --ink: #10121a;
+      --muted: #4c5568;
+      --primary: #f7f1ec;
+      --accent: #ff6b5b;
+      --accent-dark: #f15a48;
+      --sage: #dce7dc;
+      --sky: #dfeaf7;
       --white: #ffffff;
-      --shadow: 0 22px 50px rgba(38, 18, 18, 0.18);
+      --border: rgba(16, 18, 26, 0.08);
+      --shadow: 0 22px 40px rgba(16, 18, 26, 0.12);
     }
 
     * {
@@ -23,38 +25,10 @@
 
     body {
       margin: 0;
-      font-family: "Noto Sans SC", "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      font-family: "Inter", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
       color: var(--ink);
-      background: radial-gradient(circle at 12% 18%, rgba(255, 205, 64, 0.45), transparent 45%),
-        radial-gradient(circle at 88% 12%, rgba(255, 72, 72, 0.45), transparent 42%),
-        radial-gradient(circle at 70% 85%, rgba(255, 126, 64, 0.35), transparent 40%),
-        linear-gradient(150deg, #ffe9da 0%, #ffd7c4 50%, #ffc4b5 100%);
-      line-height: 1.8;
-    }
-
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      border-radius: 50%;
-      opacity: 0.25;
-      z-index: -1;
-    }
-
-    body::before {
-      width: 360px;
-      height: 360px;
-      background: radial-gradient(circle, rgba(255, 187, 64, 0.75), transparent 70%);
-      top: -140px;
-      right: -120px;
-    }
-
-    body::after {
-      width: 420px;
-      height: 420px;
-      background: radial-gradient(circle, rgba(229, 59, 59, 0.6), transparent 70%);
-      bottom: -180px;
-      left: -140px;
+      background: var(--primary);
+      line-height: 1.7;
     }
 
     a {
@@ -66,15 +40,15 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      background: rgba(247, 241, 236, 0.92);
       backdrop-filter: blur(12px);
-      background: rgba(255, 235, 226, 0.92);
-      border-bottom: 1px solid rgba(34, 18, 18, 0.08);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 1.2rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -84,44 +58,34 @@
     .nav__brand {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
-      font-weight: 700;
+      gap: 0.9rem;
+      font-weight: 600;
     }
 
     .nav__brand img {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       object-fit: cover;
+      border: 2px solid rgba(255, 107, 91, 0.35);
       box-shadow: var(--shadow);
-      border: 2px solid rgba(209, 47, 47, 0.45);
-    }
-
-    .nav__tag {
-      font-size: 0.8rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(34, 18, 18, 0.6);
     }
 
     .nav__links {
       display: flex;
-      gap: 1rem;
+      gap: 1.3rem;
       font-size: 0.95rem;
-      color: rgba(34, 18, 18, 0.7);
+      color: var(--muted);
     }
 
     .nav__links a:hover {
-      color: var(--deep-red);
-    }
-
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 2.8rem 1.5rem 4rem;
+      color: var(--accent-dark);
     }
 
     .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 2rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2.5rem;
@@ -132,31 +96,30 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.5rem 1rem;
+      padding: 0.35rem 0.9rem;
       border-radius: 999px;
-      border: 1px solid rgba(209, 47, 47, 0.3);
-      background: rgba(255, 255, 255, 0.75);
-      font-size: 0.85rem;
-      letter-spacing: 0.18em;
+      background: var(--white);
+      border: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 1.1rem;
     }
 
-    .hero__text h1 {
-      font-family: "ZCOOL KuaiLe", "Noto Sans SC", sans-serif;
+    .hero__title {
+      font-family: "Playfair Display", serif;
       font-size: clamp(2.6rem, 5.2vw, 3.9rem);
-      margin: 0 0 0.8rem;
-      color: var(--deep-red);
-      letter-spacing: 0.02em;
+      margin: 0.8rem 0 1rem;
     }
 
-    .hero__text h1 span {
-      color: var(--red);
+    .hero__title span {
+      color: var(--accent-dark);
     }
 
     .hero__text p {
-      margin: 0 0 1.6rem;
-      color: rgba(34, 18, 18, 0.7);
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      max-width: 32rem;
     }
 
     .button-row {
@@ -168,135 +131,156 @@
     .button {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.8rem 1.3rem;
+      justify-content: center;
+      padding: 0.85rem 1.4rem;
       border-radius: 999px;
-      border: 1px solid rgba(209, 47, 47, 0.25);
-      background: var(--white);
+      border: 1px solid var(--border);
       font-weight: 600;
-      box-shadow: var(--shadow);
+      background: var(--white);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow);
     }
 
     .button.primary {
-      background: linear-gradient(135deg, rgba(209, 47, 47, 0.95), rgba(242, 193, 79, 0.95));
+      background: var(--accent);
       color: var(--white);
       border: none;
     }
 
     .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 40px rgba(30, 18, 18, 0.2);
+      box-shadow: 0 18px 30px rgba(16, 18, 26, 0.16);
     }
 
     .hero__card {
-      background: rgba(255, 255, 255, 0.92);
-      border-radius: 24px;
-      padding: 1.6rem;
+      background: var(--white);
+      border-radius: 28px;
+      padding: 1.5rem;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(209, 47, 47, 0.15);
+      border: 1px solid var(--border);
       display: grid;
-      gap: 1rem;
+      gap: 1.1rem;
     }
 
     .hero__card img {
       width: 100%;
-      border-radius: 18px;
-      border: 1px solid rgba(209, 47, 47, 0.18);
-      box-shadow: 0 16px 32px rgba(38, 18, 18, 0.12);
+      border-radius: 20px;
       object-fit: cover;
     }
 
-    .hero__card h2 {
-      margin: 0;
-      font-size: 1.2rem;
-      color: rgba(34, 18, 18, 0.7);
-    }
-
-    .hero__card ul {
-      margin: 0;
-      padding-left: 1.1rem;
-    }
-
-    section h2 {
-      font-family: "ZCOOL KuaiLe", "Noto Sans SC", sans-serif;
-      font-size: 1.9rem;
-      margin: 2.8rem 0 0.8rem;
-      color: var(--deep-red);
-    }
-
-    .muted {
-      color: rgba(34, 18, 18, 0.65);
-    }
-
-    .paper-row {
-      display: flex;
-      flex-wrap: wrap;
+    .hero__meta {
+      display: grid;
       gap: 0.6rem;
-      margin-top: 1rem;
     }
 
-    .paper-cut {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.35rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(209, 47, 47, 0.12);
-      border: 1px dashed rgba(209, 47, 47, 0.35);
-      font-size: 0.85rem;
-      color: rgba(34, 18, 18, 0.7);
+    .hero__meta strong {
+      font-size: 1.1rem;
+    }
+
+    .section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .section__title {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .section__lead {
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+      max-width: 40rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .stat {
+      background: var(--white);
+      padding: 1.2rem;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .stat span {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent-dark);
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.2rem;
-      margin-top: 1.2rem;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.92);
+      background: var(--white);
       border-radius: 20px;
       padding: 1.3rem;
-      border: 1px solid rgba(209, 47, 47, 0.12);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow);
       display: grid;
-      gap: 0.6rem;
+      gap: 0.7rem;
     }
 
-    .card small {
+    .card__tag {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: rgba(34, 18, 18, 0.55);
     }
 
-    .phrase {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .process {
+      display: grid;
       gap: 1rem;
-      padding: 0.9rem 1rem;
-      border-radius: 16px;
-      background: rgba(242, 193, 79, 0.2);
-      border: 1px solid rgba(209, 47, 47, 0.12);
     }
 
-    .phrase span {
-      font-weight: 700;
+    .process__step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-radius: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      align-items: center;
     }
 
-    .phrase em {
-      font-style: normal;
-      color: rgba(34, 18, 18, 0.7);
+    .process__step span {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--sage);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--ink);
     }
 
-    .cta {
-      margin-top: 2.5rem;
-      padding: 2rem;
+    .testimonial {
+      background: var(--sky);
       border-radius: 24px;
-      background: linear-gradient(135deg, rgba(209, 47, 47, 0.14), rgba(242, 193, 79, 0.2));
-      border: 1px solid rgba(209, 47, 47, 0.12);
+      padding: 1.8rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .contact {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 2rem;
+      border: 1px solid var(--border);
       box-shadow: var(--shadow);
       display: grid;
       gap: 1rem;
@@ -304,10 +288,8 @@
 
     footer {
       text-align: center;
-      padding: 3rem 1rem;
-      color: rgba(34, 18, 18, 0.6);
-      border-top: 1px solid rgba(209, 47, 47, 0.12);
-      background: rgba(255, 235, 226, 0.95);
+      padding: 3rem 1rem 4rem;
+      color: var(--muted);
     }
 
     @media (max-width: 720px) {
@@ -326,121 +308,156 @@
   <header>
     <nav class="nav">
       <div class="nav__brand">
-        <img src="avatar.png" alt="チェンのアバター">
+        <img src="avatar.png" alt="Chen 個人頭像" />
         <div>
-          <div style="font-size: 0.95rem;">チェン</div>
-          <div class="nav__tag">春節 2026</div>
+          <div>Chen</div>
+          <div style="font-size: 0.85rem; color: var(--muted);">Product Designer · Mentor</div>
         </div>
       </div>
-      <div class="nav__links" aria-label="ページ内リンク">
-        <a href="#class">教室</a>
-        <a href="#phrases">吉祥話</a>
-        <a href="#offers">過年優惠</a>
-        <a href="#schedule">開課資訊</a>
+      <div class="nav__links" aria-label="頁面導覽">
+        <a href="#about">關於我</a>
+        <a href="#services">服務</a>
+        <a href="#work">案例</a>
+        <a href="#process">流程</a>
+        <a href="#contact">聯絡</a>
       </div>
     </nav>
   </header>
 
-  <main class="container">
-    <section class="hero" id="class">
+  <main>
+    <section class="hero" id="about">
       <div class="hero__text">
-        <div class="hero__badge">春節 2026</div>
-        <h1>過年氣氛滿滿、<span>中文教室</span>開講。</h1>
-        <p>春節の楽しさをそのまま教室に。大紅と金色、剪紙風の装飾で、にぎやかな学びの時間を作ります。</p>
+        <div class="hero__badge">2026 Portfolio Refresh</div>
+        <h1 class="hero__title">用溫柔又有力的設計，<span>陪你完成下一次升級</span>。</h1>
+        <p>我專注在產品設計、品牌體驗與設計指導，協助團隊打造一致且可擴展的體驗。2026 版本以更清晰的敘事與流程，讓合作夥伴快速理解我的風格與價值。</p>
         <div class="button-row">
-          <a class="button primary" href="index.html">ポートフォリオへ戻る</a>
-          <a class="button" href="#phrases">吉祥話を見る</a>
+          <a class="button primary" href="#contact">預約諮詢</a>
+          <a class="button" href="index.html">回到主頁</a>
         </div>
       </div>
       <div class="hero__card">
-        <img src="2026.jpeg" alt="春節教室のイメージ">
-        <h2>教室のポイント</h2>
-        <ul>
-          <li>剪紙フレームで縁起の良い教室ボード</li>
-          <li>可愛い春節モチーフとカード風の配色</li>
-          <li>短い会話練習と吉祥話のミニ講座</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="phrases">
-      <h2>新年吉祥話ミニ講座</h2>
-      <p class="muted">過年のあいさつで使えるフレーズと意味をまとめました。</p>
-      <div class="grid">
-        <div class="phrase">
-          <span>新年快乐</span>
-          <em>新年おめでとう</em>
-        </div>
-        <div class="phrase">
-          <span>恭喜发财</span>
-          <em>お金が巡る一年に</em>
-        </div>
-        <div class="phrase">
-          <span>万事如意</span>
-          <em>すべて順調に</em>
-        </div>
-        <div class="phrase">
-          <span>心想事成</span>
-          <em>願いが叶う</em>
-        </div>
-        <div class="phrase">
-          <span>平安喜乐</span>
-          <em>平和と喜び</em>
-        </div>
-        <div class="phrase">
-          <span>福星高照</span>
-          <em>幸運が降り注ぐ</em>
+        <img src="2026.jpeg" alt="作品集主視覺" />
+        <div class="hero__meta">
+          <strong>Chen · Product Designer</strong>
+          <span style="color: var(--muted);">基於研究、策略與細緻視覺，打造令人安心的數位體驗。</span>
+          <span style="color: var(--muted);">合作領域：SaaS、教育、生活風格品牌</span>
         </div>
       </div>
     </section>
 
-    <section id="offers">
-      <h2>過年優惠</h2>
-      <p class="muted">春節期間限定の特典と、体験レッスンの案内です。</p>
+    <section class="section">
+      <h2 class="section__title">設計影響力</h2>
+      <p class="section__lead">從策略對焦到視覺落地，我重視團隊協作與清晰溝通，確保設計能被持續放大。</p>
+      <div class="stats">
+        <div class="stat">
+          <span>40+</span>
+          <p>跨領域專案協作</p>
+        </div>
+        <div class="stat">
+          <span>12</span>
+          <p>產品與品牌設計方案</p>
+        </div>
+        <div class="stat">
+          <span>6 年</span>
+          <p>設計與教學經驗</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <h2 class="section__title">服務範圍</h2>
+      <p class="section__lead">從 0 到 1 的產品構建、既有產品優化、設計制度建立，都能一起梳理。</p>
       <div class="grid">
         <article class="card">
-          <small>紅包特典</small>
-          <h3>初回体験レッスン 30% オフ</h3>
-          <p>はじめての方限定で、春節期間の体験レッスンが割引になります。</p>
+          <span class="card__tag">產品設計</span>
+          <h3>策略 + 使用者旅程</h3>
+          <p>建立清晰的資訊架構與使用情境，讓產品目標與使用者需求一致。</p>
         </article>
         <article class="card">
-          <small>友達招待</small>
-          <h3>ペア申込で教材プレゼント</h3>
-          <p>友達と一緒に受講すると、吉祥話カードセットをプレゼント。</p>
+          <span class="card__tag">視覺系統</span>
+          <h3>品牌調性與 UI 系統</h3>
+          <p>打造可延伸的設計語言，確保不同觸點有一致質感。</p>
         </article>
         <article class="card">
-          <small>連続受講</small>
-          <h3>3回パックで復習シート付き</h3>
-          <p>短期集中パックで、レッスン後に使える復習シートを配布。</p>
+          <span class="card__tag">設計指導</span>
+          <h3>團隊培訓與評審</h3>
+          <p>提供設計 review 與 mentor session，協助團隊建立工作節奏。</p>
         </article>
       </div>
     </section>
 
-    <section id="schedule">
-      <h2>開課資訊</h2>
-      <p class="muted">春節の学習スケジュールと開講クラスの概要です。</p>
+    <section class="section" id="work">
+      <h2 class="section__title">精選案例</h2>
+      <p class="section__lead">以下是 2026 想分享的三個合作案例，內容包含策略、流程與成果。</p>
       <div class="grid">
         <article class="card">
-          <small>入門クラス</small>
-          <h3>1月上旬｜あいさつ集中</h3>
-          <p>発音と基本のあいさつを中心に、短い会話を練習。</p>
+          <span class="card__tag">SaaS 轉型</span>
+          <h3>智慧排程系統重構</h3>
+          <p>重新定義核心使用流程，提升完成率 28%。</p>
         </article>
         <article class="card">
-          <small>会話クラス</small>
-          <h3>1月中旬｜吉祥話と会話</h3>
-          <p>春節の場面に合わせた会話練習で、自然に言えるように。</p>
+          <span class="card__tag">EdTech</span>
+          <h3>線上課程體驗升級</h3>
+          <p>結合學習旅程設計，提升課程留存與互動。</p>
         </article>
         <article class="card">
-          <small>文化クラス</small>
-          <h3>1月下旬｜過年の文化体験</h3>
-          <p>春節の習慣や文化背景を学びながら語彙を増やします。</p>
+          <span class="card__tag">生活風格</span>
+          <h3>品牌識別與線上商店</h3>
+          <p>為新品牌建立視覺語言與電商體驗。</p>
         </article>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <h2 class="section__title">合作流程</h2>
+      <p class="section__lead">在每個階段提供清楚的交付內容，讓你知道下一步該做什麼。</p>
+      <div class="process">
+        <div class="process__step">
+          <span>1</span>
+          <div>
+            <h3>探索與目標對焦</h3>
+            <p>釐清商業目標與使用者需求，建立共識與節奏。</p>
+          </div>
+        </div>
+        <div class="process__step">
+          <span>2</span>
+          <div>
+            <h3>體驗設計與測試</h3>
+            <p>透過流程設計與原型驗證，確保概念可行。</p>
+          </div>
+        </div>
+        <div class="process__step">
+          <span>3</span>
+          <div>
+            <h3>視覺落地與交付</h3>
+            <p>製作設計系統與交付文件，協助開發落地。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="testimonial">
+        <h2 class="section__title">合作夥伴回饋</h2>
+        <p class="section__lead">“Chen 能快速掌握產品需求，並給出令人信服的設計策略。我們在兩週內就完成了方向確認，專案如期落地。”</p>
+        <p style="margin: 0; font-weight: 600;">— Leo, Product Lead</p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="contact">
+        <h2 class="section__title">一起聊聊 2026 的想法</h2>
+        <p class="section__lead">如果你想重新整理產品體驗或建立品牌視覺系統，可以直接寫信給我。</p>
+        <div class="button-row">
+          <a class="button primary" href="mailto:hello@example.com">寫信聯絡</a>
+          <a class="button" href="#work">查看案例</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2026 チェン — 春節中国語教室
+    © 2026 Chen · Product Designer & Mentor
   </footer>
 </body>
 </html>
