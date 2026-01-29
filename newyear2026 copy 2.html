@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>チェン | 2026 ポートフォリオ</title>
+    <meta
+      name="description"
+      content="チェンの2026ポートフォリオ。VTuberのデザイン、動画、X/YouTube発信、ゲーム、ブログ、年賀状をまとめています。"
+    />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ink: #111;
+        --paper: #fff7ef;
+        --cream: #fff1d6;
+        --pink: #ff8fe9;
+        --yellow: #ffd200;
+        --mint: #49f2c2;
+        --blue: #77a8ff;
+        --shadow: 6px 6px 0 var(--ink);
+        --radius: 22px;
+        --border: 3px solid var(--ink);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", "Noto Sans JP", system-ui, -apple-system, "Segoe UI",
+          sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.55;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 40px));
+        margin-inline: auto;
+      }
+
+      /* Topbar */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 247, 239, 0.9);
+        backdrop-filter: blur(8px);
+        border-bottom: var(--border);
+      }
+
+      .topbar__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+
+      .brand__mark {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border: var(--border);
+        border-radius: 14px;
+        background: var(--yellow);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .brand__name {
+        font-size: 18px;
+      }
+
+      .nav {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        font-weight: 600;
+      }
+
+      .nav a {
+        padding: 8px 10px;
+        border-radius: 12px;
+      }
+
+      .nav a:hover {
+        background: #fff;
+        text-decoration: none;
+        outline: 2px solid var(--ink);
+      }
+
+      .topbar__actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .pill {
+        padding: 10px 12px;
+        border: var(--border);
+        border-radius: 999px;
+        background: #fff;
+        box-shadow: var(--shadow);
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .pill--dark {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .pill:hover {
+        text-decoration: none;
+        transform: translate(-1px, -1px);
+      }
+
+      /* Hero */
+      .hero {
+        border-bottom: var(--border);
+        background: linear-gradient(90deg, #ffb3f1 0 55%, #ffd200 55% 100%);
+      }
+
+      .hero__grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 24px;
+        padding: 56px 0;
+        align-items: center;
+      }
+
+      .hero__left {
+        padding: 10px 0;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 12px;
+        border: var(--border);
+        border-radius: 999px;
+        background: #fff;
+        box-shadow: 4px 4px 0 var(--ink);
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .tag--mint {
+        background: var(--mint);
+      }
+
+      .tag--yellow {
+        background: var(--yellow);
+      }
+
+      .tag--pink {
+        background: var(--pink);
+      }
+
+      .tag--blue {
+        background: var(--blue);
+      }
+
+      .hero__title {
+        margin: 0 0 14px;
+        font-size: clamp(42px, 4vw, 66px);
+        line-height: 1.02;
+        letter-spacing: -0.6px;
+      }
+
+      .hero__title-accent {
+        display: inline-block;
+        background: #fff;
+        border: var(--border);
+        border-radius: 16px;
+        padding: 6px 10px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero__lead {
+        margin: 0 0 18px;
+        font-size: 18px;
+        max-width: 56ch;
+      }
+
+      .hero__cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 18px 0 18px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 16px;
+        border: var(--border);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        font-weight: 800;
+        background: #fff;
+      }
+
+      .btn:hover {
+        text-decoration: none;
+        transform: translate(-1px, -1px);
+      }
+
+      .btn--dark {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .btn--light {
+        background: #fff;
+      }
+
+      .mini {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .mini__card {
+        border: var(--border);
+        border-radius: 18px;
+        background: #fff;
+        box-shadow: 4px 4px 0 var(--ink);
+        padding: 12px 12px;
+      }
+
+      .mini__k {
+        font-size: 12px;
+        opacity: 0.8;
+        font-weight: 700;
+      }
+
+      .mini__v {
+        font-size: 14px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        border: 2px solid var(--ink);
+        display: inline-block;
+      }
+
+      .dot--green {
+        background: #45f08a;
+      }
+
+      /* Hero art */
+      .hero-art {
+        position: relative;
+        border: var(--border);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+        padding: 18px;
+        min-height: 420px;
+        overflow: hidden;
+      }
+
+      .hero-art__blob {
+        position: absolute;
+        inset: auto;
+        width: 320px;
+        height: 320px;
+        right: -60px;
+        top: 40px;
+        background: #ffb3f1;
+        border: var(--border);
+        border-radius: 60% 40% 60% 40% / 55% 45% 55% 45%;
+        transform: rotate(12deg);
+      }
+
+      .hero-art__portrait {
+        position: relative;
+        z-index: 2;
+        margin-top: 30px;
+        margin-left: 6px;
+        width: 78%;
+        border: var(--border);
+        border-radius: 26px;
+        background: #fff;
+        box-shadow: 5px 5px 0 var(--ink);
+        overflow: hidden;
+      }
+
+      .sticker {
+        position: absolute;
+        z-index: 3;
+        border: var(--border);
+        border-radius: 999px;
+        padding: 10px 12px;
+        background: #fff;
+        box-shadow: 4px 4px 0 var(--ink);
+        font-weight: 800;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      .sticker--a {
+        left: 18px;
+        top: 16px;
+        background: var(--yellow);
+      }
+
+      .sticker--b {
+        right: 16px;
+        top: 14px;
+        background: var(--mint);
+      }
+
+      .sticker--c {
+        left: 18px;
+        bottom: 16px;
+        background: var(--blue);
+      }
+
+      /* Sections */
+      .section {
+        padding: 66px 0;
+        border-bottom: var(--border);
+        background: var(--paper);
+      }
+
+      .section--cream {
+        background: var(--cream);
+      }
+
+      .section--pink {
+        background: #ffd8f7;
+      }
+
+      .section__head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 20px;
+      }
+
+      .section__head h2 {
+        margin: 0;
+        font-size: clamp(28px, 3vw, 40px);
+        line-height: 1.1;
+      }
+
+      .section__head p {
+        margin: 0;
+        max-width: 52ch;
+        font-weight: 600;
+        opacity: 0.9;
+      }
+
+      /* Checklist */
+      .checklist {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .checklist__item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: var(--border);
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 4px 4px 0 var(--ink);
+        padding: 12px 14px;
+        font-weight: 700;
+      }
+
+      .checklist__item input {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--ink);
+      }
+
+      .checklist__note {
+        margin: 14px 0 0;
+        font-size: 13px;
+        font-weight: 700;
+        opacity: 0.8;
+      }
+
+      /* Profile notes */
+      .now-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .note {
+        border: var(--border);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+
+      .note h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .note p {
+        margin: 0 0 12px;
+        font-weight: 600;
+      }
+
+      .note__meta {
+        font-size: 12px;
+        font-weight: 800;
+        opacity: 0.75;
+      }
+
+      /* Cards */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        border: var(--border);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+
+      .card__icon {
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        border: var(--border);
+        border-radius: 16px;
+        background: var(--yellow);
+        box-shadow: 4px 4px 0 var(--ink);
+        margin-bottom: 12px;
+        font-size: 22px;
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .card p {
+        margin: 0 0 12px;
+        font-weight: 600;
+      }
+
+      .list {
+        margin: 0;
+        padding-left: 18px;
+        font-weight: 700;
+      }
+
+      .list li {
+        margin: 6px 0;
+      }
+
+      /* Projects */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .project {
+        border: var(--border);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+
+      .project__top {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 10px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        font-weight: 900;
+        font-size: 12px;
+        background: #fff;
+      }
+
+      .badge--wip {
+        background: var(--yellow);
+      }
+
+      .project h3 {
+        margin: 0 0 8px;
+        font-size: 20px;
+      }
+
+      .project p {
+        margin: 0 0 12px;
+        font-weight: 650;
+      }
+
+      .project__links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .project__media {
+        border: var(--border);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 4px 4px 0 var(--ink);
+        background: #fff;
+      }
+
+      .project__media img {
+        width: 100%;
+        height: auto;
+      }
+
+      .link {
+        font-weight: 900;
+        text-decoration: underline;
+      }
+
+      .link:hover {
+        text-decoration: none;
+      }
+
+      /* About + Contact */
+      .about {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 16px;
+        align-items: start;
+      }
+
+      .about__box {
+        border: var(--border);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+
+      .about__lead {
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .contact {
+        border: var(--border);
+        border-radius: var(--radius);
+        background: var(--cream);
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+
+      .contact h3 {
+        margin: 0 0 8px;
+      }
+
+      .contact p {
+        margin: 0 0 12px;
+        font-weight: 650;
+      }
+
+      .contact__row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+
+      .tiny {
+        font-size: 12px;
+        font-weight: 800;
+        opacity: 0.85;
+      }
+
+      code {
+        border: 2px solid var(--ink);
+        border-radius: 10px;
+        padding: 2px 6px;
+        background: #fff;
+        font-weight: 900;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--paper);
+        padding: 26px 0;
+      }
+
+      .footer__inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .footer__small {
+        opacity: 0.8;
+        font-weight: 700;
+      }
+
+      /* Responsive */
+      @media (max-width: 980px) {
+        .hero__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          background: linear-gradient(180deg, #ffb3f1 0 55%, #ffd200 55% 100%);
+        }
+
+        .hero-art {
+          min-height: 380px;
+        }
+
+        .mini {
+          grid-template-columns: 1fr;
+        }
+
+        .checklist {
+          grid-template-columns: 1fr;
+        }
+
+        .now-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+
+        .about {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="#">
+          <span class="brand__mark" aria-hidden="true">
+            <img src="./avatar.png" alt="チェンのアイコン" />
+          </span>
+          <span class="brand__name">チェン / Chen</span>
+        </a>
+
+        <nav class="nav">
+          <a href="#profile">自己紹介</a>
+          <a href="#dream">夢</a>
+          <a href="#newyear">年賀状</a>
+          <a href="#vtuber">VTuber</a>
+          <a href="#other">その他</a>
+        </nav>
+
+        <div class="topbar__actions">
+          <a class="pill" href="#newyear">年賀状を見る</a>
+          <a class="pill pill--dark" href="#contact">連絡する</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero__grid">
+          <!-- LEFT -->
+          <div class="hero__left">
+            <div class="tag-row">
+              <span class="tag tag--mint">PORTFOLIO</span>
+              <span class="tag tag--yellow">VTuber</span>
+              <span class="tag tag--pink">DESIGN</span>
+              <span class="tag tag--blue">VIDEO</span>
+              <span class="tag">2026</span>
+            </div>
+
+            <h1 class="hero__title">
+              チェンの2026ポートフォリオ
+              <span class="hero__title-accent">つくる・伝える・育てる</span>
+            </h1>
+
+            <p class="hero__lead">
+              イラスト・UI・映像を組み合わせて、VTuberの世界観を設計しています。
+              企画からデザイン、動画編集、発信まで一貫して制作するのが得意です。
+              2026年は「小さく公開し続ける」をテーマに、作品を積み上げます。
+            </p>
+
+            <div class="hero__cta">
+              <a class="btn btn--dark" href="#profile">自己紹介を見る</a>
+              <a class="btn btn--light" href="#vtuber">VTuber実績へ</a>
+            </div>
+
+            <div class="mini">
+              <div class="mini__card">
+                <div class="mini__k">Focus</div>
+                <div class="mini__v">
+                  <span class="dot dot--green"></span> VTuber制作 / 映像
+                </div>
+              </div>
+              <div class="mini__card">
+                <div class="mini__k">Tools</div>
+                <div class="mini__v">Clip Studio / Figma / AE</div>
+              </div>
+              <div class="mini__card">
+                <div class="mini__k">2026</div>
+                <div class="mini__v">毎月1本の新作公開</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT / AVATAR -->
+          <div class="hero__right">
+            <div class="hero-art">
+              <div class="hero-art__blob"></div>
+
+              <div class="hero-art__portrait" style="position: relative">
+                <img
+                  src="./2026A.png"
+                  alt="2026年キービジュアル"
+                  style="width: 100%; height: auto; display: block; border-radius: 24px"
+                />
+
+                <!-- FACE HOTSPOT -->
+                <div
+                  id="avatarHotspot"
+                  style="
+                    position: absolute;
+                    left: 20%;
+                    top: 38%;
+                    width: 30%;
+                    aspect-ratio: 1 / 1;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    transition: box-shadow 0.3s ease, transform 0.3s ease;
+                  "
+                >
+                  <!-- FLOATING CLICK HINT -->
+                  <div
+                    id="clickHint"
+                    style="
+                      position: absolute;
+                      left: 50%;
+                      bottom: -28px;
+                      transform: translateX(-50%);
+                      font-size: 11px;
+                      font-weight: 800;
+                      letter-spacing: 0.12em;
+                      padding: 4px 8px;
+                      background: #111;
+                      color: #fff;
+                      border-radius: 999px;
+                      opacity: 0;
+                      pointer-events: none;
+                      transition: opacity 0.2s ease, transform 0.2s ease;
+                      white-space: nowrap;
+                    "
+                  >
+                    TAP
+                  </div>
+                </div>
+
+                <!-- SPEECH BUBBLE (SIDE) -->
+                <div
+                  id="avatarSpeech"
+                  style="
+                    position: absolute;
+                    left: calc(38% + 26%);
+                    top: 30%;
+                    max-width: 240px;
+                    padding: 12px 14px;
+                    background: #fff;
+                    border: 3px solid #111;
+                    border-radius: 16px;
+                    box-shadow: 4px 4px 0 #111;
+                    font-weight: 700;
+                    font-size: 14px;
+                    display: none;
+                  "
+                >
+                  あけましておめでとう！2026もよろしくね。
+                </div>
+              </div>
+
+              <div class="sticker sticker--a">🎨 VTuber Design</div>
+              <div class="sticker sticker--b">🎬 Video Edit</div>
+              <div class="sticker sticker--c">🎍 New Year</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHECKLIST -->
+      <section id="checklist" class="section section--cream">
+        <div class="container">
+          <div class="section__head">
+            <h2>チェックリスト</h2>
+            <p>コンテンツを充実させた項目はチェック済みにしています。</p>
+          </div>
+
+          <div class="checklist">
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              自己紹介
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              夢
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              年賀状
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              VTuber：デザイン
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              VTuber：動画
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              X / YouTube
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              その他
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              ゲーム
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              Blog
+            </label>
+          </div>
+
+          <p class="checklist__note">※内容に合わせてチェックを更新してください。</p>
+        </div>
+      </section>
+
+      <!-- PROFILE -->
+      <section id="profile" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>自己紹介</h2>
+            <p>キャラクターと映像をつなげる、VTuberクリエイターです。</p>
+          </div>
+
+          <div class="now-grid">
+            <article class="note">
+              <h3>👋 チェンについて</h3>
+              <p>
+                キャラデザインと映像編集が好き。
+                企画から仕上げまでを一人で回し、
+                世界観を丁寧に形にします。
+              </p>
+              <span class="note__meta">creator • VTuber</span>
+            </article>
+
+            <article class="note">
+              <h3>🧰 得意分野</h3>
+              <p>
+                配信画面・ロゴ・衣装デザイン、
+                ショート動画と切り抜き編集、
+                サムネ制作まで対応できます。
+              </p>
+              <span class="note__meta">design • motion • layout</span>
+            </article>
+
+            <article class="note">
+              <h3>🎯 活動スタイル</h3>
+              <p>
+                小さく公開 → 反応を見る → 改良、
+                のサイクルを重視。
+                週単位でアップデートします。
+              </p>
+              <span class="note__meta">weekly • iterate</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- DREAM -->
+      <section id="dream" class="section section--pink">
+        <div class="container">
+          <div class="section__head">
+            <h2>夢</h2>
+            <p>2026年の挑戦と、その先につながるビジョン。</p>
+          </div>
+
+          <div class="grid-2">
+            <article class="project">
+              <div class="project__top">
+                <span class="badge">2026</span>
+                <span class="badge badge--wip">Dream</span>
+              </div>
+              <h3>世界観が続いていくVTuberプロジェクト</h3>
+              <p>
+                物語・配信・SNSがつながる運用を作り、
+                ファンと一緒に育てるプロジェクトを目指します。
+              </p>
+              <div class="project__links">
+                <span class="link">企画書作成中</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project__top">
+                <span class="badge">Future</span>
+                <span class="badge">Vision</span>
+              </div>
+              <h3>ゲーム×配信の体験づくり</h3>
+              <p>
+                ゲームの中で配信が進み、
+                視聴者が選択に参加できる体験を形にしたいです。
+              </p>
+              <div class="project__links">
+                <span class="link">試作を準備中</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW YEAR CARD -->
+      <section id="newyear" class="section section--cream">
+        <div class="container">
+          <div class="section__head">
+            <h2>年賀状</h2>
+            <p>2026年のご挨拶と、作品のテーマをまとめました。</p>
+          </div>
+
+          <div class="grid-2">
+            <article class="project">
+              <div class="project__top">
+                <span class="badge">2026</span>
+                <span class="badge">Card</span>
+              </div>
+              <div class="project__media">
+                <img src="./2026.jpeg" alt="2026年の年賀状" />
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project__top">
+                <span class="badge">Message</span>
+                <span class="badge">Design</span>
+              </div>
+              <h3>あけましておめでとうございます！</h3>
+              <p>
+                2026年は「小さく作って、しっかり届ける」をテーマに。
+                1枚1枚のアウトプットを大切にしていきます。
+              </p>
+              <div class="project__links">
+                <a href="./2026.jpeg" class="link">年賀状を開く</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- VTUBER -->
+      <section id="vtuber" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>VTuber</h2>
+            <p>デザイン・動画・発信を一つの流れでまとめています。</p>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card__icon">🎨</div>
+              <h3>デザイン</h3>
+              <p>衣装、配信画面、ロゴなど世界観づくりを担当。</p>
+              <ul class="list">
+                <li>Live2D用パーツ設計</li>
+                <li>配信画面 / サムネ</li>
+                <li>ロゴ・カラープラン</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card__icon">🎬</div>
+              <h3>動画</h3>
+              <p>Shorts・切り抜き・告知映像まで編集しています。</p>
+              <ul class="list">
+                <li>オープニング / エンディング</li>
+                <li>ショート動画</li>
+                <li>歌ってみたMV</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card__icon">📣</div>
+              <h3>X / YouTube</h3>
+              <p>投稿頻度とストーリー性を大切に運用。</p>
+              <ul class="list">
+                <li>X：制作ログ / 告知</li>
+                <li>YouTube：週1投稿</li>
+                <li>シリーズ企画の運用</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- OTHER / GAMES / BLOG -->
+      <section id="other" class="section section--pink">
+        <div class="container">
+          <div class="section__head">
+            <h2>その他 / ゲーム / Blog</h2>
+            <p>制作の幅を広げるために取り組んでいる活動です。</p>
+          </div>
+
+          <div class="grid-2">
+            <article class="project">
+              <div class="project__top">
+                <span class="badge">Game</span>
+                <span class="badge">Prototype</span>
+              </div>
+              <h3>ミニゲーム制作</h3>
+              <p>
+                Unityで短い体験を作り、配信企画に組み込みます。
+                2026年は3本のプロトタイプ公開が目標です。
+              </p>
+            </article>
+
+            <article class="project">
+              <div class="project__top">
+                <span class="badge">Blog</span>
+                <span class="badge">Log</span>
+              </div>
+              <h3>制作ブログ</h3>
+              <p>制作プロセスを言語化し、学びを共有します。</p>
+              <div class="project__links">
+                <span class="link">#デザイン記録</span>
+                <span class="link">#動画編集メモ</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project__top">
+                <span class="badge">Other</span>
+                <span class="badge">Collab</span>
+              </div>
+              <h3>その他の活動</h3>
+              <p>
+                コラボ企画、イベント参加、グッズ制作など、
+                新しい表現にもチャレンジしています。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>Contact</h2>
+            <p>制作のご相談・コラボのご連絡はこちらから。</p>
+          </div>
+
+          <div class="about">
+            <div class="about__box">
+              <h3>制作ポリシー</h3>
+              <p class="about__lead">
+                企画・デザイン・動画まで、
+                ひとつの世界観として丁寧に仕上げます。
+              </p>
+              <p>
+                依頼内容やスケジュールをすり合わせながら、
+                伝えたい雰囲気を一緒に作ります。
+              </p>
+            </div>
+
+            <div class="contact">
+              <h3>連絡先</h3>
+              <p>お仕事・共同制作・配信案件などお気軽に。</p>
+
+              <div class="contact__row">
+                <a class="btn btn--dark" href="mailto:chen.portfolio@example.com">
+                  メールする
+                </a>
+                <a class="btn btn--light" href="#">X</a>
+                <a class="btn btn--light" href="#">YouTube</a>
+              </div>
+
+              <p class="tiny">
+                メールアドレスと各リンクは差し替えてください。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="container footer__inner">
+          <p>© <span id="year"></span> Chen Portfolio • 2026</p>
+          <p class="footer__small">VTuber / Design / Video / Game</p>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      const hotspot = document.getElementById("avatarHotspot");
+      const clickHint = document.getElementById("clickHint");
+      const speech = document.getElementById("avatarSpeech");
+
+      const LINE = "あけましておめでとう！2026もよろしくね。";
+
+      function speak(text) {
+        if (!("speechSynthesis" in window)) return;
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = "ja-JP";
+        u.rate = 0.95;
+        u.pitch = 1.1;
+        window.speechSynthesis.speak(u);
+      }
+
+      hotspot.addEventListener("mouseenter", () => {
+        hotspot.style.boxShadow =
+          "0 0 0 4px rgba(255,255,255,0.85), 0 0 28px rgba(255,210,0,0.95)";
+        hotspot.style.transform = "scale(1.06)";
+        clickHint.style.opacity = "1";
+        clickHint.style.transform = "translateX(-50%) translateY(-4px)";
+      });
+
+      hotspot.addEventListener("mouseleave", () => {
+        hotspot.style.boxShadow = "none";
+        hotspot.style.transform = "scale(1)";
+        clickHint.style.opacity = "0";
+        clickHint.style.transform = "translateX(-50%) translateY(0)";
+      });
+
+      hotspot.addEventListener("click", () => {
+        speech.style.display = "block";
+        speech.textContent = LINE;
+        speak(LINE);
+      });
+    </script>
+  </body>
+</html>
