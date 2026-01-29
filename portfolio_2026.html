@@ -99,10 +99,16 @@
         width: 40px;
         height: 40px;
         border: var(--border);
-        border-radius: 14px;
+        border-radius: 50%;
         background: var(--yellow);
         box-shadow: var(--shadow);
         overflow: hidden;
+      }
+
+      .brand__mark img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       .brand__name {
@@ -583,6 +589,24 @@
         height: auto;
       }
 
+      .project__media--video {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        background: #000;
+      }
+
+      .project__media--video iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .vtuber__media {
+        margin-top: 18px;
+      }
+
       .link {
         font-weight: 900;
         text-decoration: underline;
@@ -731,7 +755,7 @@
           <a href="#dream">夢</a>
           <a href="#newyear">年賀状</a>
           <a href="#vtuber">VTuber</a>
-          <a href="#other">その他</a>
+          <a href="#other">AITuberKit</a>
         </nav>
 
         <div class="topbar__actions">
@@ -870,54 +894,47 @@
         </div>
       </section>
 
-      <!-- CHECKLIST -->
-      <section id="checklist" class="section section--cream">
+      <!-- VTUBER YOUTUBE -->
+      <section class="section section--pink">
         <div class="container">
           <div class="section__head">
-            <h2>チェックリスト</h2>
-            <p>コンテンツを充実させた項目はチェック済みにしています。</p>
+            <h2>VTUBER YouTube</h2>
+            <p>VTUBERの最新動画を掲載しています。</p>
           </div>
 
-          <div class="checklist">
-            <label class="checklist__item">
-              <input type="checkbox" checked />
-              自己紹介
-            </label>
-            <label class="checklist__item">
-              <input type="checkbox" checked />
-              夢
-            </label>
-            <label class="checklist__item">
-              <input type="checkbox" checked />
-              年賀状
-            </label>
-            <label class="checklist__item">
-              <input type="checkbox" checked />
-              VTuber：デザイン
-            </label>
-            <label class="checklist__item">
-              <input type="checkbox" checked />
-              VTuber：動画
-            </label>
-            <label class="checklist__item">
-              <input type="checkbox" checked />
-              X / YouTube
-            </label>
-            <label class="checklist__item">
-              <input type="checkbox" checked />
-              その他
-            </label>
-            <label class="checklist__item">
-              <input type="checkbox" checked />
-              ゲーム
-            </label>
-            <label class="checklist__item">
-              <input type="checkbox" checked />
-              Blog
-            </label>
-          </div>
+          <div class="grid-2">
+            <article class="project">
+              <div class="project__top">
+                <span class="badge">VTUBER</span>
+                <span class="badge">YouTube</span>
+              </div>
+              <h3>VTUBER YouTube</h3>
+              <div class="project__media project__media--video">
+                <iframe
+                  src="https://www.youtube.com/embed/zbENhliv_yw?si=6rPI8i8kyGYqDK8m"
+                  title="YouTube video player"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </article>
 
-          <p class="checklist__note">※内容に合わせてチェックを更新してください。</p>
+            <article class="project">
+              <div class="project__top">
+                <span class="badge">2026</span>
+                <span class="badge">Card</span>
+              </div>
+              <h3>賀年狀</h3>
+              <div class="project__media">
+                <img src="./2026.jpeg" alt="2026年の年賀状" />
+              </div>
+              <div class="project__links">
+                <a class="link" href="./2026.jpeg">賀年狀を開く</a>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -1047,7 +1064,17 @@
         <div class="container">
           <div class="section__head">
             <h2>VTuber</h2>
-            <p>デザイン・動画・発信を一つの流れでまとめています。</p>
+            <p>
+              デザイン・動画・発信を一つの流れでまとめています。
+              <a
+                class="link"
+                href="https://www.youtube.com/@AVATalkLive"
+                target="_blank"
+                rel="noopener"
+              >
+                VTUBER
+              </a>
+            </p>
           </div>
 
           <div class="cards">
@@ -1084,6 +1111,30 @@
               </ul>
             </article>
           </div>
+
+          <div class="grid-2 vtuber__media">
+            <article class="project">
+              <div class="project__top">
+                <span class="badge">Channel</span>
+                <span class="badge">VTUBER</span>
+              </div>
+              <h3>AVATalkLive</h3>
+              <p>
+                制作や配信の情報はYouTubeで更新しています。
+                最新の動きや制作ログもこちらから。
+              </p>
+              <div class="project__links">
+                <a
+                  class="link"
+                  href="https://www.youtube.com/@AVATalkLive"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  VTUBER
+                </a>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -1091,7 +1142,17 @@
       <section id="other" class="section section--pink">
         <div class="container">
           <div class="section__head">
-            <h2>その他 / ゲーム / Blog</h2>
+            <h2>
+              <a
+                class="link"
+                href="https://aituber-kit-dhzs.vercel.app/"
+                target="_blank"
+                rel="noopener"
+              >
+                AITuberKit
+              </a>
+              / ゲーム / Blog
+            </h2>
             <p>制作の幅を広げるために取り組んでいる活動です。</p>
           </div>
 
@@ -1123,14 +1184,24 @@
 
             <article class="project">
               <div class="project__top">
-                <span class="badge">Other</span>
-                <span class="badge">Collab</span>
+                <span class="badge">AITuberKit</span>
+                <span class="badge">Web</span>
               </div>
-              <h3>その他の活動</h3>
+              <h3>AITuberKit</h3>
               <p>
-                コラボ企画、イベント参加、グッズ制作など、
-                新しい表現にもチャレンジしています。
+                配信・制作を支えるツール群をまとめたページです。
+                作品や企画の導線として活用しています。
               </p>
+              <div class="project__links">
+                <a
+                  class="btn btn--dark"
+                  href="https://aituber-kit-dhzs.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  AITuberKit を開く
+                </a>
+              </div>
             </article>
           </div>
         </div>
@@ -1165,8 +1236,12 @@
                 <a class="btn btn--dark" href="mailto:chen.portfolio@example.com">
                   メールする
                 </a>
-                <a class="btn btn--light" href="#">X</a>
-                <a class="btn btn--light" href="#">YouTube</a>
+                <a class="btn btn--light" href="https://x.com/AVATalk_x" target="_blank" rel="noopener">
+                  X
+                </a>
+                <a class="btn btn--light" href="https://x.com/AVATalk_x" target="_blank" rel="noopener">
+                  YouTube
+                </a>
               </div>
 
               <p class="tiny">
@@ -1174,6 +1249,57 @@
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- CHECKLIST -->
+      <section id="checklist" class="section section--cream">
+        <div class="container">
+          <div class="section__head">
+            <h2>チェックリスト</h2>
+            <p>コンテンツを充実させた項目はチェック済みにしています。</p>
+          </div>
+
+          <div class="checklist">
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              自己紹介
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              夢
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              年賀状
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              VTuber：デザイン
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              VTuber：動画
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              X / YouTube
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              その他
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              ゲーム
+            </label>
+            <label class="checklist__item">
+              <input type="checkbox" checked />
+              Blog
+            </label>
+          </div>
+
+          <p class="checklist__note">※内容に合わせてチェックを更新してください。</p>
         </div>
       </section>
 
